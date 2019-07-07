@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GitHub</string>
+    <string name="bt_search">검색하기</string>
+</resources>
