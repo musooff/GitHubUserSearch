@@ -58,7 +58,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:onClick="@{() -> viewModel.onLike()}"
+                android:onClick="@{() -> viewModel.onClickLike()}"
                 android:tint="@color/colorWhite"
                 android:background="?attr/actionBarItemBackground"
                 app:uri="@{viewModel.favorite ? R.drawable.ic_favorite : R.drawable.ic_favorite_disabled}"/>

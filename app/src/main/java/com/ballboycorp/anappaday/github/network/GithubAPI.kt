@@ -1,7 +1,7 @@
 package com.ballboycorp.anappaday.github.network
 
 import com.ballboycorp.anappaday.github.model.user.User
-import io.reactivex.Observable
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,5 +11,5 @@ import retrofit2.http.Query
 interface GithubAPI {
 
     @GET("/search/users")
-    fun users(@Query(value = "q") query: String): Observable<User.Result>
+    fun users(@Query(value = "q") query: String, @Query(value = "page") page: Int, @Query(value = "per_page") perPage: Int): Single<User.Result>
 }

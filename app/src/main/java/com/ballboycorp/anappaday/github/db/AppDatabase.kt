@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.ballboycorp.anappaday.github.db.contervers.MainConverters
 import com.ballboycorp.anappaday.github.db.dao.UserDao
 import com.ballboycorp.anappaday.github.model.user.User
 

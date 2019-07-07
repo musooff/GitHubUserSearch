@@ -1,7 +1,6 @@
 package com.ballboycorp.anappaday.github.main.home.search
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.ballboycorp.anappaday.github.base.BaseFragment
 import com.ballboycorp.anappaday.github.databinding.FragmentSearchBinding
-import com.ballboycorp.anappaday.github.main.home.search.adapter.SearchResultAdapter
+import com.ballboycorp.anappaday.github.main.home.search.utils.SearchResultAdapter
 import com.ballboycorp.anappaday.github.utils.extensions.getViewModel
 import com.ballboycorp.anappaday.github.utils.extensions.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -22,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_search.*
 class SearchFragment: BaseFragment() {
 
     private val viewModel by lazy { getViewModel<SearchViewModel>() }
-    private val resultAdapter = SearchResultAdapter()
+    val adapter = SearchResultAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentSearchBinding.inflate(inflater, container, false)
@@ -44,7 +43,7 @@ class SearchFragment: BaseFragment() {
 
     private fun initializeViews() {
 
-        rvSearchResults.adapter = resultAdapter
+        rvSearchResults.adapter = adapter
 
         searchEditText.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -59,8 +58,8 @@ class SearchFragment: BaseFragment() {
 
     private fun initializeViewModel() {
 
-        viewModel.searchResults.observe(this, Observer {
-            resultAdapter.submitList(it)
+        viewModel.pagedList.observe(this, Observer {
+            adapter.submitList(it)
         })
     }
 }

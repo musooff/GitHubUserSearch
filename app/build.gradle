@@ -66,4 +66,9 @@ dependencies {
     implementation "com.facebook.stetho:stetho:1.5.1"
     implementation 'com.facebook.stetho:stetho-js-rhino:1.4.2'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    // Paging
+    implementation "androidx.paging:paging-runtime:2.1.0"
+    implementation "androidx.paging:paging-rxjava2:2.1.0"
+
 }

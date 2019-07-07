@@ -19,7 +19,7 @@ class SearchItemViewModel(var user: User) : BaseObservableViewModel() {
             notifyPropertyChanged(BR.favorite)
         }
 
-    fun onLike() {
+    fun onClickLike() {
         if (!isFavorite) {
             addDisposable(
                 appDatabase.userDao()

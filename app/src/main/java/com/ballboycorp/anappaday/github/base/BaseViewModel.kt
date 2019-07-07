@@ -20,7 +20,7 @@ open class BaseViewModel : ViewModel() {
 
     val appDatabase by lazy { AppDatabase.getInstance(MainApplication.getContext()) }
 
-    private val compositeDisposable = CompositeDisposable()
+    protected val compositeDisposable = CompositeDisposable()
 
     protected fun addDisposable(disposable: Disposable) {
         compositeDisposable.add(disposable)

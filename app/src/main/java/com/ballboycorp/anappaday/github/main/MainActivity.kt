@@ -1,7 +1,7 @@
 package com.ballboycorp.anappaday.github.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.ballboycorp.anappaday.github.R
 
 class MainActivity : AppCompatActivity() {

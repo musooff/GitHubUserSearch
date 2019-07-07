@@ -1,11 +1,8 @@
 package com.ballboycorp.anappaday.github.utils.extensions
 
-import android.content.Context
-import android.widget.EditText
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat.getSystemService
-
+import android.widget.EditText
 
 
 /**

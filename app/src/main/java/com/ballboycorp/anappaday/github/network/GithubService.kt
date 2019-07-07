@@ -44,5 +44,5 @@ class GithubService {
         }
     }
 
-    fun users(query: String) = getApi().users(query)
+    fun users(query: String, page: Int, perPage: Int) = getApi().users(query, page, perPage)
 }
