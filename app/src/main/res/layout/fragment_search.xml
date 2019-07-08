@@ -82,7 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:id="@+id/btSearch"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/selecter_button"
                     android:background="@drawable/background_search_button"
                     android:enabled="@{viewModel.query.length() > 0}"
                     android:onClick="@{() -> viewModel.onClickSearch()}"
@@ -103,6 +103,5 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/searchContainer"
                 app:layout_constraintBottom_toBottomOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

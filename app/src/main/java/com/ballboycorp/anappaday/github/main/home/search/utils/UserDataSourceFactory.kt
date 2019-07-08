@@ -7,6 +7,7 @@ import com.ballboycorp.anappaday.github.MainApplication
 import com.ballboycorp.anappaday.github.db.AppDatabase
 import com.ballboycorp.anappaday.github.model.user.User
 import com.ballboycorp.anappaday.github.network.GithubService
+import com.ballboycorp.anappaday.github.network.model.NetworkState
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.BiFunction
@@ -28,7 +29,8 @@ class UserDataSourceFactory(private val compositeDisposable: CompositeDisposable
 
 class UserDataSource(private val compositeDisposable: CompositeDisposable, private val query: String) :
     PageKeyedDataSource<Int, User>() {
-    val networkState = MutableLiveData<NullPointerException>()
+
+    val networkState = MutableLiveData<NetworkState>()
 
     private val appDatabase by lazy { AppDatabase.getInstance(MainApplication.getContext()) }
 
@@ -59,7 +61,9 @@ class UserDataSource(private val compositeDisposable: CompositeDisposable, priva
                     callback.onResult(
                         result,
                         params.key.plus(1).takeIf { result.size >= params.requestedLoadSize })
-                }, {})
+                }, {
+
+                })
         )
     }
 

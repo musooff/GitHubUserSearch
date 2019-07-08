@@ -28,7 +28,7 @@ class SearchRepository(private val compositeDisposable: CompositeDisposable) {
             UserDataSourceFactory(compositeDisposable, query)
         val livePagedList = LivePagedListBuilder(sourceFactory, config).build()
         return PagedNetworkResult(
-                data = livePagedList,
-                state = Transformations.switchMap(sourceFactory.sourceLiveData) { it.networkState })
+            data = livePagedList,
+            state = Transformations.switchMap(sourceFactory.sourceLiveData) { it.networkState })
     }
 }

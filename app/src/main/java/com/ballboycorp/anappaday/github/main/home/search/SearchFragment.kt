@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_search.*
 class SearchFragment: BaseFragment() {
 
     private val viewModel by lazy { getViewModel<SearchViewModel>() }
-    val adapter = SearchResultAdapter()
+    private val adapter = SearchResultAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentSearchBinding.inflate(inflater, container, false)
