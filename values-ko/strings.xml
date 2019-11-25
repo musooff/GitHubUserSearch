@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="app_name">Github</string>
+  <string name="bt_search">검색하기</string>
+</resources>
